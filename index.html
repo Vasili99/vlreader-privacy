@@ -14,6 +14,7 @@
       --link: #7db0ff;
       --border: rgba(255,255,255,.10);
       --shadow: 0 10px 30px rgba(0,0,0,.35);
+      --pill: rgba(125,176,255,.12);
     }
     @media (prefers-color-scheme: light) {
       :root {
@@ -24,6 +25,7 @@
         --link: #2563eb;
         --border: rgba(2,6,23,.10);
         --shadow: 0 10px 30px rgba(2,6,23,.10);
+        --pill: rgba(37,99,235,.10);
       }
     }
     * { box-sizing: border-box; }
@@ -32,9 +34,10 @@
       font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
       background: var(--bg);
       color: var(--text);
-      line-height: 1.6;
+      line-height: 1.65;
     }
-    a { color: var(--link); }
+    a { color: var(--link); text-decoration: none; }
+    a:hover { text-decoration: underline; }
     .wrap {
       max-width: 980px;
       margin: 40px auto;
@@ -50,7 +53,7 @@
     header {
       display: flex;
       gap: 12px;
-      align-items: center;
+      align-items: flex-start;
       justify-content: space-between;
       flex-wrap: wrap;
       margin-bottom: 14px;
@@ -89,12 +92,15 @@
     .lang.active { display: block; }
 
     h2 { margin: 18px 0 8px; font-size: 18px; }
+    h3 { margin: 14px 0 6px; font-size: 16px; color: var(--text); }
     ul { margin: 8px 0 10px 22px; }
     code {
-      background: rgba(125,176,255,.12);
+      background: var(--pill);
       padding: 2px 6px;
       border-radius: 8px;
       border: 1px solid var(--border);
+      font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+      font-size: 0.95em;
     }
     .note {
       border-left: 3px solid rgba(125,176,255,.8);
@@ -110,6 +116,16 @@
       color: var(--muted);
       font-size: 13px;
     }
+    .pill {
+      display: inline-block;
+      padding: 2px 8px;
+      border-radius: 999px;
+      border: 1px solid var(--border);
+      background: var(--pill);
+      font-size: 12px;
+      color: var(--muted);
+      margin-left: 8px;
+    }
   </style>
 </head>
 
@@ -118,7 +134,7 @@
     <div class="card">
       <header>
         <div>
-          <h1>VL Reader — Privacy Policy</h1>
+          <h1>VL Reader — Privacy Policy <span class="pill">EN / RU / 中文</span></h1>
           <div class="meta">
             Effective date: <strong>2026-01-12</strong> · Support:
             <a href="mailto:vlreader.app@gmail.com">vlreader.app@gmail.com</a>
@@ -129,21 +145,23 @@
           <label for="langSelect" class="meta" style="margin:0;">Language:</label>
           <select id="langSelect" aria-label="Select language">
             <option value="en">English (EN)</option>
-            <option value="es">Español (ES)</option>
-            <option value="de">Deutsch (DE)</option>
+            <option value="ru">Русский (RU)</option>
+            <option value="zh">中文 (简体) (ZH)</option>
           </select>
           <button id="copyLinkBtn" type="button">Copy page link</button>
         </div>
       </header>
 
       <div class="note">
-        Translations (ES/DE) are provided for convenience. In case of discrepancies, the <strong>English version prevails</strong>.
+        Russian and Chinese versions are provided for convenience. In case of discrepancies, the <strong>English version prevails</strong>.
       </div>
 
       <!-- ====================== EN ====================== -->
       <section class="lang" data-lang="en">
         <h2>1) What information we process</h2>
+
         <h3>Account information</h3>
+        <p>When you create an account or sign in, we may process:</p>
         <ul>
           <li>Email address</li>
           <li>User identifier (user ID)</li>
@@ -201,7 +219,8 @@
         <h2>6) Your rights & requests</h2>
         <p>
           Depending on your location, you may have rights to access, correct, or delete your data.
-          To make a privacy request, contact: <a href="mailto:vlreader.app@gmail.com">vlreader.app@gmail.com</a>
+          To make a privacy request, contact:
+          <a href="mailto:vlreader.app@gmail.com">vlreader.app@gmail.com</a>
         </p>
         <p><em>Suggested subject:</em> <code>Privacy Request — VL Reader</code></p>
 
@@ -229,127 +248,189 @@
         </p>
       </section>
 
-      <!-- ====================== ES ====================== -->
-      <section class="lang" data-lang="es">
-        <h2>1) Qué información tratamos</h2>
-        <h3>Información de la cuenta</h3>
+      <!-- ====================== RU ====================== -->
+      <section class="lang" data-lang="ru">
+        <h2>1) Какие данные мы обрабатываем</h2>
+
+        <h3>Данные аккаунта</h3>
+        <p>При регистрации/входе мы можем обрабатывать:</p>
         <ul>
-          <li>Correo electrónico</li>
-          <li>Identificador de usuario (user ID)</li>
-          <li>Datos de autenticación/sesión</li>
-          <li>Información básica del perfil (p. ej., estado del plan de suscripción)</li>
+          <li>Адрес электронной почты (email)</li>
+          <li>Идентификатор пользователя (user ID)</li>
+          <li>Данные сессии/аутентификации</li>
+          <li>Базовые данные профиля (например, статус тарифного плана)</li>
         </ul>
         <p>
-          Si inicias sesión con Google, podemos recibir datos básicos del perfil proporcionados por Google (como foto/avata r).
+          Если вы входите через Google, мы можем получить базовые данные профиля, предоставленные Google (например, фото/аватар).
         </p>
 
-        <h3>Suscripciones y compras (Google Play)</h3>
-        <p>Cuando compras una suscripción, podemos tratar:</p>
+        <h3>Подписки и покупки (Google Play)</h3>
+        <p>При оформлении подписки мы можем обрабатывать:</p>
         <ul>
-          <li>Identificadores de producto (p. ej., <code>pro_monthly</code>, <code>pro_plus_monthly</code>)</li>
-          <li>Token de compra / identificadores de transacción necesarios para validar la suscripción</li>
-          <li>Estado de la suscripción (activa/inactiva) y el plan asignado (free / pro / pro_plus)</li>
+          <li>Идентификаторы продукта (например, <code>pro_monthly</code>, <code>pro_plus_monthly</code>)</li>
+          <li>Токен покупки / идентификаторы транзакции, необходимые для проверки подписки</li>
+          <li>Статус подписки (активна/неактивна) и назначенный тариф (free / pro / pro_plus)</li>
         </ul>
-        <p><strong>No recopilamos ni almacenamos datos de tarjetas.</strong> Los pagos se procesan en Google Play.</p>
+        <p><strong>Мы не собираем и не храним данные банковской карты.</strong> Оплата обрабатывается Google Play.</p>
 
-        <h3>Información técnica</h3>
+        <h3>Технические данные</h3>
         <p>
-          Podemos tratar información técnica necesaria para operar la app de forma segura y fiable (por ejemplo, diagnósticos ante errores).
+          Мы можем обрабатывать технические данные, необходимые для безопасной и стабильной работы приложения
+          (например, диагностическую информацию при ошибках).
         </p>
 
-        <h2>2) Cómo usamos la información</h2>
+        <h2>2) Зачем мы используем данные</h2>
         <ul>
-          <li>Crear y administrar tu cuenta</li>
-          <li>Autenticarte y mantener tu sesión</li>
-          <li>Proporcionar funcionalidades y soporte</li>
-          <li>Habilitar funciones de pago y verificar suscripciones</li>
-          <li>Prevenir abuso/fraude y mejorar la seguridad</li>
-          <li>Mantener y mejorar la app</li>
+          <li>Создание и управление аккаунтом</li>
+          <li>Аутентификация и поддержка сессии</li>
+          <li>Предоставление функций приложения и поддержки</li>
+          <li>Включение платных функций и проверка подписок</li>
+          <li>Предотвращение злоупотреблений/мошенничества и повышение безопасности</li>
+          <li>Поддержка и улучшение приложения</li>
         </ul>
 
-        <h2>3) Compartición de información</h2>
+        <h2>3) Передача данных третьим сторонам</h2>
+        <p>Мы передаём данные только в объёме, необходимом для работы сервиса:</p>
         <ul>
-          <li><strong>Supabase</strong> (autenticación y base de datos): almacena datos de cuenta y perfil.</li>
-          <li><strong>Google Play / Google Play Billing</strong>: procesa pagos y devuelve datos necesarios para verificar la suscripción.</li>
+          <li><strong>Supabase</strong> (аутентификация и база данных): хранение данных аккаунта и профиля (email, user ID, план).</li>
+          <li><strong>Google Play / Google Play Billing</strong>: обработка платежей и предоставление данных о покупке для проверки подписки.</li>
         </ul>
-        <p>No vendemos tu información personal.</p>
+        <p>Мы не продаём персональные данные.</p>
 
-        <h2>4) Conservación</h2>
+        <h2>4) Сроки хранения</h2>
         <p>
-          Conservamos la información el tiempo necesario para prestar el servicio, cumplir obligaciones legales y resolver disputas.
+          Мы храним данные столько, сколько необходимо для работы приложения, соблюдения законных требований
+          и разрешения спорных ситуаций. Вы можете запросить удаление (см. раздел 6).
         </p>
 
-        <h2>5) Seguridad</h2>
+        <h2>5) Безопасность</h2>
         <p>
-          Aplicamos medidas razonables de seguridad; sin embargo, ningún sistema es 100% seguro.
+          Мы применяем разумные организационные и технические меры защиты, однако абсолютная безопасность не гарантируется.
         </p>
 
-        <h2>6) Derechos y solicitudes</h2>
+        <h2>6) Ваши права и запросы</h2>
         <p>
-          Para solicitudes de privacidad: <a href="mailto:vlreader.app@gmail.com">vlreader.app@gmail.com</a>
-          (asunto sugerido: <code>Privacy Request — VL Reader</code>)
+          В зависимости от вашей страны у вас могут быть права на доступ/исправление/удаление данных.
+          Запросы отправляйте на:
+          <a href="mailto:vlreader.app@gmail.com">vlreader.app@gmail.com</a>
+        </p>
+        <p><em>Тема письма (рекомендуем):</em> <code>Privacy Request — VL Reader</code></p>
+
+        <h2>7) Дети</h2>
+        <p>
+          VL Reader не предназначен для детей младше минимального возраста, установленного законом, без согласия родителей.
+          Если вы считаете, что ребёнок предоставил нам данные — напишите нам, и мы примем меры.
+        </p>
+
+        <h2>8) Международная обработка</h2>
+        <p>
+          Наши поставщики услуг (например, Supabase и Google) могут обрабатывать данные на серверах за пределами вашей страны.
+          Используя приложение, вы признаёте возможность такой обработки.
+        </p>
+
+        <h2>9) Изменения политики</h2>
+        <p>
+          Мы можем обновлять Политику. Актуальная версия всегда доступна по этому URL.
+          При существенных изменениях мы постараемся уведомить вас соответствующим способом.
+        </p>
+
+        <h2>10) Контакты</h2>
+        <p>
+          Email поддержки: <a href="mailto:vlreader.app@gmail.com">vlreader.app@gmail.com</a>
         </p>
       </section>
 
-      <!-- ====================== DE ====================== -->
-      <section class="lang" data-lang="de">
-        <h2>1) Welche Informationen wir verarbeiten</h2>
-        <h3>Konto-Informationen</h3>
+      <!-- ====================== ZH (Simplified) ====================== -->
+      <section class="lang" data-lang="zh">
+        <h2>1) 我们处理哪些信息</h2>
+
+        <h3>账户信息</h3>
+        <p>当您注册或登录时，我们可能会处理：</p>
         <ul>
-          <li>E-Mail-Adresse</li>
-          <li>Nutzerkennung (User ID)</li>
-          <li>Authentifizierungs-/Sitzungsdaten</li>
-          <li>Basis-Profilinformationen (z. B. Status des Abonnementplans)</li>
+          <li>电子邮箱地址</li>
+          <li>用户标识符（user ID）</li>
+          <li>认证/会话数据</li>
+          <li>基本资料信息（例如订阅方案状态）</li>
         </ul>
         <p>
-          Wenn du dich mit Google anmeldest, können wir grundlegende Profildaten von Google erhalten (z. B. Profilbild/Avatar).
+          若您使用 Google 登录，我们可能会收到 Google 提供的基本资料信息（例如头像/个人资料图片）。
         </p>
 
-        <h3>Abonnements & Käufe (Google Play)</h3>
-        <p>Beim Kauf eines Abonnements können wir verarbeiten:</p>
+        <h3>订阅与购买（Google Play）</h3>
+        <p>当您购买订阅时，我们可能会处理：</p>
         <ul>
-          <li>Produkt-IDs (z. B. <code>pro_monthly</code>, <code>pro_plus_monthly</code>)</li>
-          <li>Kauf-Token / Transaktionskennungen zur Validierung des Abonnements</li>
-          <li>Abonnementstatus (aktiv/inaktiv) und zugewiesener Plan (free / pro / pro_plus)</li>
+          <li>产品标识符（例如 <code>pro_monthly</code>、<code>pro_plus_monthly</code>）</li>
+          <li>用于验证订阅所需的购买令牌/交易标识符（purchase token）</li>
+          <li>订阅状态（有效/无效）以及分配给您账户的方案（free / pro / pro_plus）</li>
         </ul>
-        <p><strong>Wir speichern keine Kartendaten.</strong> Zahlungen werden über Google Play abgewickelt.</p>
+        <p><strong>我们不会收集或存储您的银行卡信息。</strong> 支付由 Google Play 处理。</p>
 
-        <h3>Technische Informationen</h3>
+        <h3>技术信息</h3>
         <p>
-          Wir können technische Informationen verarbeiten, die für einen sicheren und zuverlässigen Betrieb der App erforderlich sind
-          (z. B. Diagnoseinformationen bei Fehlern).
+          我们可能会处理为确保应用安全、稳定运行所需的技术信息（例如发生问题时的诊断信息）。
         </p>
 
-        <h2>2) Zweck der Verarbeitung</h2>
+        <h2>2) 我们如何使用这些信息</h2>
         <ul>
-          <li>Erstellung und Verwaltung deines Kontos</li>
-          <li>Authentifizierung und Sitzungsverwaltung</li>
-          <li>Bereitstellung von Funktionen und Support</li>
-          <li>Freischaltung bezahlter Funktionen und Abo-Verifizierung</li>
-          <li>Sicherheitsmaßnahmen und Missbrauchsprävention</li>
-          <li>Wartung und Verbesserung der App</li>
+          <li>创建并管理您的账户</li>
+          <li>对您进行身份验证并维持会话</li>
+          <li>提供应用功能与客户支持</li>
+          <li>启用付费功能并验证订阅</li>
+          <li>防止滥用/欺诈并提升安全性</li>
+          <li>维护与改进应用</li>
         </ul>
 
-        <h2>3) Weitergabe</h2>
+        <h2>3) 信息共享</h2>
+        <p>我们仅在提供服务所必需的范围内共享信息：</p>
         <ul>
-          <li><strong>Supabase</strong>: Authentifizierung und Datenbank (Konto-/Profildaten).</li>
-          <li><strong>Google Play Billing</strong>: Zahlungsabwicklung und Abo-Daten zur Verifizierung.</li>
+          <li><strong>Supabase</strong>（认证与数据库托管）：存储账户与资料数据（例如邮箱、user ID、订阅方案）。</li>
+          <li><strong>Google Play / Google Play Billing</strong>：处理支付并提供验证订阅所需的购买数据。</li>
         </ul>
-        <p>Wir verkaufen keine personenbezogenen Daten.</p>
+        <p>我们不会出售您的个人信息。</p>
 
-        <h2>4) Aufbewahrung</h2>
+        <h2>4) 数据保留</h2>
         <p>
-          Wir speichern Daten nur so lange wie nötig, um den Dienst bereitzustellen, rechtliche Pflichten zu erfüllen und Streitigkeiten zu klären.
+          我们会在提供服务、遵守法律义务以及解决争议所必需的期限内保留信息。您可以请求删除（见第 6 节）。
         </p>
 
-        <h2>5) Kontakt</h2>
+        <h2>5) 安全</h2>
         <p>
-          Datenschutz-Anfragen: <a href="mailto:vlreader.app@gmail.com">vlreader.app@gmail.com</a>
+          我们采取合理的管理与技术措施保护信息，但任何传输或存储方式都无法保证 100% 安全。
+        </p>
+
+        <h2>6) 您的权利与请求</h2>
+        <p>
+          根据您所在地区，您可能享有访问、更正或删除数据的权利。
+          如需提出隐私请求，请联系：
+          <a href="mailto:vlreader.app@gmail.com">vlreader.app@gmail.com</a>
+        </p>
+        <p><em>建议邮件主题：</em> <code>Privacy Request — VL Reader</code></p>
+
+        <h2>7) 儿童</h2>
+        <p>
+          VL Reader 不面向未达到适用法律规定最低年龄、且未经监护人同意的儿童。
+          若您认为儿童向我们提供了个人信息，请联系我们，我们将采取适当措施。
+        </p>
+
+        <h2>8) 跨境传输</h2>
+        <p>
+          我们的服务提供方（例如 Supabase、Google）可能在您所在国家/地区之外的服务器上处理信息。
+          使用本应用即表示您知悉并同意可能存在跨境处理。
+        </p>
+
+        <h2>9) 本政策的变更</h2>
+        <p>
+          我们可能不时更新本隐私政策。最新版本将始终在此 URL 提供。如有重大变更，我们将尽力提供适当通知。
+        </p>
+
+        <h2>10) 联系方式</h2>
+        <p>
+          支持邮箱：<a href="mailto:vlreader.app@gmail.com">vlreader.app@gmail.com</a>
         </p>
       </section>
 
       <footer>
-        Tip: after updating this file, GitHub Pages may take 1–2 minutes to refresh.
+        After updating this file, GitHub Pages may take 1–2 minutes to refresh.
       </footer>
     </div>
   </div>
@@ -359,6 +440,7 @@
       const select = document.getElementById("langSelect");
       const sections = Array.from(document.querySelectorAll(".lang"));
       const copyBtn = document.getElementById("copyLinkBtn");
+      const supported = ["en", "ru", "zh"];
 
       function setLang(lang) {
         sections.forEach(s => s.classList.toggle("active", s.dataset.lang === lang));
@@ -367,6 +449,7 @@
         const url = new URL(window.location.href);
         url.hash = "lang=" + lang;
         history.replaceState(null, "", url.toString());
+        document.documentElement.lang = lang === "zh" ? "zh-Hans" : lang;
       }
 
       function getLangFromHash() {
@@ -375,19 +458,19 @@
         return h.slice("lang=".length);
       }
 
-      function getBrowserLang() {
+      function detectLang() {
         const l = (navigator.language || "en").toLowerCase();
-        if (l.startsWith("es")) return "es";
-        if (l.startsWith("de")) return "de";
+        if (l.startsWith("ru")) return "ru";
+        if (l.startsWith("zh")) return "zh";
         return "en";
       }
 
       const initial =
         getLangFromHash()
         || (function(){ try { return localStorage.getItem("vlreader_privacy_lang"); } catch { return null; } })()
-        || getBrowserLang();
+        || detectLang();
 
-      setLang(["en","es","de"].includes(initial) ? initial : "en");
+      setLang(supported.includes(initial) ? initial : "en");
 
       select.addEventListener("change", () => setLang(select.value));
 
@@ -404,7 +487,7 @@
 
       window.addEventListener("hashchange", () => {
         const l = getLangFromHash();
-        if (l && ["en","es","de"].includes(l)) setLang(l);
+        if (l && supported.includes(l)) setLang(l);
       });
     })();
   </script>
