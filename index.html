@@ -4,21 +4,409 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
   <title>VL Reader — Privacy Policy</title>
+  <meta name="description" content="VL Reader Privacy Policy" />
   <style>
-    body{font-family:system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;max-width:900px;margin:40px auto;padding:0 16px;line-height:1.6}
-    h1,h2{line-height:1.25}
-    code{background:#f2f2f2;padding:2px 6px;border-radius:6px}
+    :root {
+      --bg: #0b0f17;
+      --card: #101827;
+      --text: #e6eaf2;
+      --muted: #a9b2c7;
+      --link: #7db0ff;
+      --border: rgba(255,255,255,.10);
+      --shadow: 0 10px 30px rgba(0,0,0,.35);
+    }
+    @media (prefers-color-scheme: light) {
+      :root {
+        --bg: #f6f7fb;
+        --card: #ffffff;
+        --text: #0f172a;
+        --muted: #475569;
+        --link: #2563eb;
+        --border: rgba(2,6,23,.10);
+        --shadow: 0 10px 30px rgba(2,6,23,.10);
+      }
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.6;
+    }
+    a { color: var(--link); }
+    .wrap {
+      max-width: 980px;
+      margin: 40px auto;
+      padding: 0 16px;
+    }
+    .card {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      box-shadow: var(--shadow);
+      padding: 20px 18px;
+    }
+    header {
+      display: flex;
+      gap: 12px;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      margin-bottom: 14px;
+    }
+    h1 {
+      font-size: 24px;
+      margin: 0;
+      letter-spacing: .2px;
+    }
+    .meta {
+      color: var(--muted);
+      font-size: 14px;
+      margin-top: 6px;
+    }
+    .controls {
+      display: flex;
+      gap: 8px;
+      align-items: center;
+      flex-wrap: wrap;
+    }
+    select, button {
+      background: transparent;
+      color: var(--text);
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      padding: 8px 10px;
+      font-size: 14px;
+    }
+    button { cursor: pointer; }
+    button:hover, select:hover { border-color: rgba(125,176,255,.55); }
+
+    .lang {
+      display: none;
+      margin-top: 12px;
+    }
+    .lang.active { display: block; }
+
+    h2 { margin: 18px 0 8px; font-size: 18px; }
+    ul { margin: 8px 0 10px 22px; }
+    code {
+      background: rgba(125,176,255,.12);
+      padding: 2px 6px;
+      border-radius: 8px;
+      border: 1px solid var(--border);
+    }
+    .note {
+      border-left: 3px solid rgba(125,176,255,.8);
+      padding: 10px 12px;
+      margin: 12px 0;
+      background: rgba(125,176,255,.08);
+      border-radius: 10px;
+      color: var(--muted);
+      font-size: 14px;
+    }
+    footer {
+      margin-top: 14px;
+      color: var(--muted);
+      font-size: 13px;
+    }
   </style>
 </head>
-<body>
-  <main>
-    <h1>VL Reader — Privacy Policy</h1>
-    <p><strong>Effective date:</strong> 2026-01-12<br>
-       <strong>Support email:</strong> <a href="mailto:vlreader.app@gmail.com">vlreader.app@gmail.com</a></p>
 
-    <!-- Вставь сюда весь текст Privacy Policy -->
-    <h2>1) What information we collect</h2>
-    <p>...</p>
-  </main>
+<body>
+  <div class="wrap">
+    <div class="card">
+      <header>
+        <div>
+          <h1>VL Reader — Privacy Policy</h1>
+          <div class="meta">
+            Effective date: <strong>2026-01-12</strong> · Support:
+            <a href="mailto:vlreader.app@gmail.com">vlreader.app@gmail.com</a>
+          </div>
+        </div>
+
+        <div class="controls">
+          <label for="langSelect" class="meta" style="margin:0;">Language:</label>
+          <select id="langSelect" aria-label="Select language">
+            <option value="en">English (EN)</option>
+            <option value="es">Español (ES)</option>
+            <option value="de">Deutsch (DE)</option>
+          </select>
+          <button id="copyLinkBtn" type="button">Copy page link</button>
+        </div>
+      </header>
+
+      <div class="note">
+        Translations (ES/DE) are provided for convenience. In case of discrepancies, the <strong>English version prevails</strong>.
+      </div>
+
+      <!-- ====================== EN ====================== -->
+      <section class="lang" data-lang="en">
+        <h2>1) What information we process</h2>
+        <h3>Account information</h3>
+        <ul>
+          <li>Email address</li>
+          <li>User identifier (user ID)</li>
+          <li>Authentication/session data</li>
+          <li>Basic profile information (e.g., subscription plan status)</li>
+        </ul>
+        <p>
+          If you sign in with Google, we may receive basic profile data provided by Google (such as a profile picture/avatar).
+        </p>
+
+        <h3>Subscriptions & purchases (Google Play)</h3>
+        <p>When you purchase a subscription, we may process:</p>
+        <ul>
+          <li>Product identifiers (e.g., <code>pro_monthly</code>, <code>pro_plus_monthly</code>)</li>
+          <li>Purchase token / transaction identifiers required to validate your subscription</li>
+          <li>Subscription status (active/inactive) and the plan assigned to your account (free / pro / pro_plus)</li>
+        </ul>
+        <p><strong>We do not collect or store your payment card details.</strong> Payments are processed by Google Play.</p>
+
+        <h3>Technical information</h3>
+        <p>
+          We may process technical information needed to operate the app securely and reliably (for example, diagnostics when issues occur).
+        </p>
+
+        <h2>2) How we use your information</h2>
+        <ul>
+          <li>Create and manage your account</li>
+          <li>Authenticate you and maintain your session</li>
+          <li>Provide app functionality and customer support</li>
+          <li>Enable paid features and verify subscriptions</li>
+          <li>Prevent abuse/fraud and improve security</li>
+          <li>Maintain and improve the app</li>
+        </ul>
+
+        <h2>3) Sharing of information</h2>
+        <p>We share information only as necessary to provide the service:</p>
+        <ul>
+          <li><strong>Supabase</strong> (authentication and database hosting): stores account and profile data (e.g., email, user ID, subscription plan).</li>
+          <li><strong>Google Play / Google Play Billing</strong>: processes payments and provides subscription purchase data required for verification.</li>
+        </ul>
+        <p>We do not sell your personal information.</p>
+
+        <h2>4) Data retention</h2>
+        <p>
+          We keep your information as long as necessary to provide the service, comply with legal obligations,
+          and resolve disputes / enforce agreements. You may request deletion (see Section 6).
+        </p>
+
+        <h2>5) Security</h2>
+        <p>
+          We use reasonable administrative and technical measures to protect information. However,
+          no method of transmission or storage is 100% secure.
+        </p>
+
+        <h2>6) Your rights & requests</h2>
+        <p>
+          Depending on your location, you may have rights to access, correct, or delete your data.
+          To make a privacy request, contact: <a href="mailto:vlreader.app@gmail.com">vlreader.app@gmail.com</a>
+        </p>
+        <p><em>Suggested subject:</em> <code>Privacy Request — VL Reader</code></p>
+
+        <h2>7) Children</h2>
+        <p>
+          VL Reader is not intended for children under the minimum age required by applicable law without parental consent.
+          If you believe a child provided personal information, contact us and we will take appropriate steps.
+        </p>
+
+        <h2>8) International transfers</h2>
+        <p>
+          Our service providers (e.g., Supabase, Google) may process information on servers located outside your country.
+          By using the app, you acknowledge that your information may be processed in other jurisdictions.
+        </p>
+
+        <h2>9) Changes to this policy</h2>
+        <p>
+          We may update this Privacy Policy from time to time. The latest version will be available at this URL.
+          If changes are material, we will try to provide appropriate notice.
+        </p>
+
+        <h2>10) Contact</h2>
+        <p>
+          Support email: <a href="mailto:vlreader.app@gmail.com">vlreader.app@gmail.com</a>
+        </p>
+      </section>
+
+      <!-- ====================== ES ====================== -->
+      <section class="lang" data-lang="es">
+        <h2>1) Qué información tratamos</h2>
+        <h3>Información de la cuenta</h3>
+        <ul>
+          <li>Correo electrónico</li>
+          <li>Identificador de usuario (user ID)</li>
+          <li>Datos de autenticación/sesión</li>
+          <li>Información básica del perfil (p. ej., estado del plan de suscripción)</li>
+        </ul>
+        <p>
+          Si inicias sesión con Google, podemos recibir datos básicos del perfil proporcionados por Google (como foto/avata r).
+        </p>
+
+        <h3>Suscripciones y compras (Google Play)</h3>
+        <p>Cuando compras una suscripción, podemos tratar:</p>
+        <ul>
+          <li>Identificadores de producto (p. ej., <code>pro_monthly</code>, <code>pro_plus_monthly</code>)</li>
+          <li>Token de compra / identificadores de transacción necesarios para validar la suscripción</li>
+          <li>Estado de la suscripción (activa/inactiva) y el plan asignado (free / pro / pro_plus)</li>
+        </ul>
+        <p><strong>No recopilamos ni almacenamos datos de tarjetas.</strong> Los pagos se procesan en Google Play.</p>
+
+        <h3>Información técnica</h3>
+        <p>
+          Podemos tratar información técnica necesaria para operar la app de forma segura y fiable (por ejemplo, diagnósticos ante errores).
+        </p>
+
+        <h2>2) Cómo usamos la información</h2>
+        <ul>
+          <li>Crear y administrar tu cuenta</li>
+          <li>Autenticarte y mantener tu sesión</li>
+          <li>Proporcionar funcionalidades y soporte</li>
+          <li>Habilitar funciones de pago y verificar suscripciones</li>
+          <li>Prevenir abuso/fraude y mejorar la seguridad</li>
+          <li>Mantener y mejorar la app</li>
+        </ul>
+
+        <h2>3) Compartición de información</h2>
+        <ul>
+          <li><strong>Supabase</strong> (autenticación y base de datos): almacena datos de cuenta y perfil.</li>
+          <li><strong>Google Play / Google Play Billing</strong>: procesa pagos y devuelve datos necesarios para verificar la suscripción.</li>
+        </ul>
+        <p>No vendemos tu información personal.</p>
+
+        <h2>4) Conservación</h2>
+        <p>
+          Conservamos la información el tiempo necesario para prestar el servicio, cumplir obligaciones legales y resolver disputas.
+        </p>
+
+        <h2>5) Seguridad</h2>
+        <p>
+          Aplicamos medidas razonables de seguridad; sin embargo, ningún sistema es 100% seguro.
+        </p>
+
+        <h2>6) Derechos y solicitudes</h2>
+        <p>
+          Para solicitudes de privacidad: <a href="mailto:vlreader.app@gmail.com">vlreader.app@gmail.com</a>
+          (asunto sugerido: <code>Privacy Request — VL Reader</code>)
+        </p>
+      </section>
+
+      <!-- ====================== DE ====================== -->
+      <section class="lang" data-lang="de">
+        <h2>1) Welche Informationen wir verarbeiten</h2>
+        <h3>Konto-Informationen</h3>
+        <ul>
+          <li>E-Mail-Adresse</li>
+          <li>Nutzerkennung (User ID)</li>
+          <li>Authentifizierungs-/Sitzungsdaten</li>
+          <li>Basis-Profilinformationen (z. B. Status des Abonnementplans)</li>
+        </ul>
+        <p>
+          Wenn du dich mit Google anmeldest, können wir grundlegende Profildaten von Google erhalten (z. B. Profilbild/Avatar).
+        </p>
+
+        <h3>Abonnements & Käufe (Google Play)</h3>
+        <p>Beim Kauf eines Abonnements können wir verarbeiten:</p>
+        <ul>
+          <li>Produkt-IDs (z. B. <code>pro_monthly</code>, <code>pro_plus_monthly</code>)</li>
+          <li>Kauf-Token / Transaktionskennungen zur Validierung des Abonnements</li>
+          <li>Abonnementstatus (aktiv/inaktiv) und zugewiesener Plan (free / pro / pro_plus)</li>
+        </ul>
+        <p><strong>Wir speichern keine Kartendaten.</strong> Zahlungen werden über Google Play abgewickelt.</p>
+
+        <h3>Technische Informationen</h3>
+        <p>
+          Wir können technische Informationen verarbeiten, die für einen sicheren und zuverlässigen Betrieb der App erforderlich sind
+          (z. B. Diagnoseinformationen bei Fehlern).
+        </p>
+
+        <h2>2) Zweck der Verarbeitung</h2>
+        <ul>
+          <li>Erstellung und Verwaltung deines Kontos</li>
+          <li>Authentifizierung und Sitzungsverwaltung</li>
+          <li>Bereitstellung von Funktionen und Support</li>
+          <li>Freischaltung bezahlter Funktionen und Abo-Verifizierung</li>
+          <li>Sicherheitsmaßnahmen und Missbrauchsprävention</li>
+          <li>Wartung und Verbesserung der App</li>
+        </ul>
+
+        <h2>3) Weitergabe</h2>
+        <ul>
+          <li><strong>Supabase</strong>: Authentifizierung und Datenbank (Konto-/Profildaten).</li>
+          <li><strong>Google Play Billing</strong>: Zahlungsabwicklung und Abo-Daten zur Verifizierung.</li>
+        </ul>
+        <p>Wir verkaufen keine personenbezogenen Daten.</p>
+
+        <h2>4) Aufbewahrung</h2>
+        <p>
+          Wir speichern Daten nur so lange wie nötig, um den Dienst bereitzustellen, rechtliche Pflichten zu erfüllen und Streitigkeiten zu klären.
+        </p>
+
+        <h2>5) Kontakt</h2>
+        <p>
+          Datenschutz-Anfragen: <a href="mailto:vlreader.app@gmail.com">vlreader.app@gmail.com</a>
+        </p>
+      </section>
+
+      <footer>
+        Tip: after updating this file, GitHub Pages may take 1–2 minutes to refresh.
+      </footer>
+    </div>
+  </div>
+
+  <script>
+    (function () {
+      const select = document.getElementById("langSelect");
+      const sections = Array.from(document.querySelectorAll(".lang"));
+      const copyBtn = document.getElementById("copyLinkBtn");
+
+      function setLang(lang) {
+        sections.forEach(s => s.classList.toggle("active", s.dataset.lang === lang));
+        select.value = lang;
+        try { localStorage.setItem("vlreader_privacy_lang", lang); } catch {}
+        const url = new URL(window.location.href);
+        url.hash = "lang=" + lang;
+        history.replaceState(null, "", url.toString());
+      }
+
+      function getLangFromHash() {
+        const h = (window.location.hash || "").replace("#", "");
+        if (!h.startsWith("lang=")) return null;
+        return h.slice("lang=".length);
+      }
+
+      function getBrowserLang() {
+        const l = (navigator.language || "en").toLowerCase();
+        if (l.startsWith("es")) return "es";
+        if (l.startsWith("de")) return "de";
+        return "en";
+      }
+
+      const initial =
+        getLangFromHash()
+        || (function(){ try { return localStorage.getItem("vlreader_privacy_lang"); } catch { return null; } })()
+        || getBrowserLang();
+
+      setLang(["en","es","de"].includes(initial) ? initial : "en");
+
+      select.addEventListener("change", () => setLang(select.value));
+
+      copyBtn.addEventListener("click", async () => {
+        const link = window.location.href;
+        try {
+          await navigator.clipboard.writeText(link);
+          copyBtn.textContent = "Copied";
+          setTimeout(() => (copyBtn.textContent = "Copy page link"), 1200);
+        } catch {
+          prompt("Copy this link:", link);
+        }
+      });
+
+      window.addEventListener("hashchange", () => {
+        const l = getLangFromHash();
+        if (l && ["en","es","de"].includes(l)) setLang(l);
+      });
+    })();
+  </script>
 </body>
 </html>
